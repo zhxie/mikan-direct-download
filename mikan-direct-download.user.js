@@ -16,10 +16,8 @@
 
   const links = document.getElementsByClassName("js-magnet magnet-link");
   for (const link of links) {
-    const button = document.createElement("a");
-    button.className = "js-magnet magnet-link";
-    button.href = link.getAttribute("data-clipboard-text");
-    button.text = "[立即下载]";
-    link.parentElement.appendChild(button);
+    link.href = link.getAttribute("data-clipboard-text");
+    link.removeAttribute("data-clipboard-text");
+    link.textContent = "[立即下载]";
   }
 })();
